@@ -1,0 +1,12 @@
+import pyduino
+
+port = "/dev/ttyUSB0"
+pin = 0
+
+#connect
+arduino = pyduino.Arduino(port)
+arduino.analog[pin].set_active(1)
+arduino.iterate()
+dings = arduino.analog[pin].read()
+print dings
+arduino.exit()
